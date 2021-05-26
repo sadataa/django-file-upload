@@ -1,0 +1,32 @@
+<!-- Export base.html file -->
+{% extends 'base.html' %}
+<!-- static file load -->
+{% load static %}
+<!-- header title -->
+{% block head_title %}public-document{% endblock head_title %}
+
+<!-- main content -->
+{% block content %}
+    <div class="container">
+		<div class="row">
+            <div class="col-12 col-xl-10 m-auto">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h2 class="text-muted text-center">All User List</h2>
+                    </div>
+                    <ul>
+                        <li>{{ u_user.username}}</li>
+                        <li>{{ u_user.email}}</li>
+                        <li>{{ u_user.type}}</li>
+                        <li>is_staff: {{ u_user.is_staff}}</li>
+                    </ul>
+                    <form action="{% url 'account:user_update_view' pk=u_user.pk %}" method="post">
+                        {% csrf_token %}
+						{{ form.as_p }}
+                        <button type="submit">Update</button>
+					</form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

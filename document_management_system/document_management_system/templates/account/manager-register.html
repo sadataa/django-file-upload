@@ -1,0 +1,43 @@
+<!-- Export base.html file -->
+{% extends 'base1.html' %}
+<!-- static file load -->
+{% load static %}
+<!-- header title -->
+{% block head_title %}{% endblock head_title %}
+
+<!-- main content -->
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 m-auto">
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <h3 class="card-subtitle text-muted text-center m-1">Manager Register</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <!-- {{ form.as_p }} -->
+                            <input type="text" name="username" class="form-control mb-3" placeholder="Username">
+                            <input type="email" name="email" class="form-control mb-3" placeholder="Email">
+                            <input type="password" name="password1" class="form-control mb-3" placeholder="Password">
+                            <input type="password" name="password2" class="form-control mb-3" placeholder="Conformation Password">
+                            <button type="submit" class="btn btn-primary">Register</button>
+
+                            {% for field in form %}
+                            <p>
+                                {% for error in field.errors %}
+                                    <p style="color: red;">{{ error }}</p>
+                                {% endfor %}   
+                            </p>
+                            {% endfor %}
+                            {% if form.non_field_errors %}
+                                <p style="color: red;">{{ form.non_field_errors }}</p>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

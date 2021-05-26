@@ -1,0 +1,40 @@
+<!-- Export base.html file -->
+{% extends 'base.html' %}
+<!-- static file load -->
+{% load static %}
+<!-- header title -->
+{% block head_title %}add-document{% endblock head_title %}
+
+<!-- main content -->
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 m-auto">
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <h3 class="card-subtitle text-muted m-2 text-center">Document management system</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST" enctype='multipart/form-data'>
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <!-- <input type="text" name="title" class="form-control mb-3" placeholder="Document title">
+                            <input type="file" name="document" class="form-control mb-3"> -->
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            {% for field in form %}
+                            <p>
+                                {% for error in field.errors %}
+                                    <p style="color: red;">{{ error }}</p>
+                                {% endfor %}   
+                            </p>
+                            {% endfor %}
+                            {% if form.non_field_errors %}
+                                <p style="color: red;">{{ form.non_field_errors }}</p>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

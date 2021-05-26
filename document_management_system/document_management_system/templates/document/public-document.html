@@ -1,0 +1,51 @@
+<!-- Export base.html file -->
+{% extends 'base.html' %}
+<!-- static file load -->
+{% load static %}
+<!-- header title -->
+{% block head_title %}public-document{% endblock head_title %}
+
+<!-- main content -->
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-xl-10 m-auto">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h5 class="card-title">Contextual Classes</h5>
+                        <h6 class="card-subtitle text-muted">Use contextual classes to color table rows or individual cells.</h6>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Title</th>
+                                <th>Document</th>
+                                <th>status</th>
+                                <th>Join date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            {% for pd in public_document %}
+                                <tr>
+                                    <td>{{ pd.user }}</td>
+                                    <td>{{ pd.title }}</td>
+                                    <td>{{ pd.document }}</td>
+                                    <td>{{ pd.status }}</td>
+                                    <td>{{ pd.created_at|date }}</td>
+                                    <td class="table-action">
+                                        <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
+                                        <a href="#"><i class="align-middle" data-feather="trash"></i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                                
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

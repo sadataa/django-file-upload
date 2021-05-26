@@ -1,0 +1,60 @@
+<!-- Export base.html file -->
+{% extends 'base.html' %}
+<!-- static file load -->
+{% load static %}
+<!-- header title -->
+{% block head_title %}public-document{% endblock head_title %}
+
+<!-- main content -->
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-xl-10 m-auto">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h5 class="card-title">Contextual Classes</h5>
+                        <h6 class="card-subtitle text-muted">Use contextual classes to color table rows or individual cells.</h6>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>File</th>
+                                <th>Upload Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            {% for obj in assignment %}
+                                <tr>
+                                    <td>{{ obj.name }}</td>
+                                    <td>
+                                        <ul>
+                                        {% for u in obj.member.all %}
+                                                <li>{{ u.username }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                            
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            {% for d in obj.document.all %}
+                                                <li>{{ d.title }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>{{ obj.created_at|date:"M d, Y" }}</td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="3"><h4 class="text-center">Sorry.......</h4></td>
+                                </tr>
+                            {% endfor %}
+                                
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

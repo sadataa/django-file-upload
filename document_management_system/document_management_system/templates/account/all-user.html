@@ -1,0 +1,52 @@
+<!-- Export base.html file -->
+{% extends 'base.html' %}
+<!-- static file load -->
+{% load static %}
+<!-- header title -->
+{% block head_title %}public-document{% endblock head_title %}
+
+<!-- main content -->
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-xl-10 m-auto">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h2 class="text-muted text-center">All User List</h2>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>username</th>
+                                <th>phone number</th>
+                                <th>user type</th>
+                                <th>join date</th>
+                                <th>last login</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            {% for user in users %}
+                                <tr>
+                                    <td>{{ user.username }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.type }}</td>
+                                    <td>{{ user.date_joined|date }}</td>
+                                    <td>{{ user.last_login|date }}</td>
+                                    <td>
+                                    <div class="mb-3">
+                                        <a href="{% url 'account:user_delete' pk=user.pk %}" class=""><i class="align-middle mr-2" data-feather="trash"></i></a>
+                                        <a href="{% url 'account:user_update_view' pk=user.id %}" class=""><i class="align-middle mr-2" data-feather="edit"></i></a>
+                                    </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                                
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

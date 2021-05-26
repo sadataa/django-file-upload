@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Web UI Kit &amp; Dashboard Template based on Bootstrap">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords" content="adminkit, bootstrap, web ui kit, dashboard template, admin template">
+
+	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+	<title>{% block head_title %}{% endblock head_title %} | Document Management System</title>
+
+	<link href="{% static 'css/app.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        {% include 'snippets/sidebar-navbar.html' %}
+        <div class="main">
+            {% include 'snippets/navbar.html' %}
+			<main class="content" style="min-height: 100vh; height: 100%;">
+            {% block content %}
+            {% endblock content %}
+			</main>
+            {% include 'snippets/footer.html' %}
+	    </div>
+    </div>
+    <!-- bootstrap javascript -->
+	<script src="{% static 'js/vendor.js' %}"></script>
+	<script src="{% static 'js/app.js' %}"></script>
+	<script>
+		$(function() {
+			$('#datetimepicker-dashboard').datetimepicker({
+				inline: true,
+				sideBySide: false,
+				format: 'L'
+			});
+		});
+	</script>
+
+</body>
+
+</html>

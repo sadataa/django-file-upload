@@ -1,0 +1,111 @@
+{% extends 'base1.html' %}
+<!-- static file load -->
+{% load static %}
+<!-- header title -->
+{% block head_title %}Login{% endblock head_title %}
+
+<!-- main content -->
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    {% load static%}
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Landing page</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'new/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+       
+           <!-- Masthead-->
+           <div class="jumbotron jumbotron-fluid bg-dark vh-50">
+            <div class="container text-center text-white ">
+                <br><br><br>
+                  
+              <h2>Welcome to Plan International</h2><br>
+              <p>Thank you for visiting our page</p> <br>
+              <button type="button" class="btn btn-secondary"><a href="#services">Login to visit </a></button>
+              <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a> -->
+            </div>
+          </div>
+                
+            
+        </header>
+        <!-- Services-->
+        
+        
+        
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Our Team</h2>
+                   
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{% static 'new/assets/img/team/akib.jpg'%}" alt="" />
+                            <h4>Akib dewan</h4>
+                            <p class="text-muted"></p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{% static 'new/assets/img/team/ali.jpg'%}" alt="" />
+                            <h4>Ali hawk</h4>
+                            <p class="text-muted"></p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            
+                            <img class="mx-auto rounded-circle" src="{% static 'new/assets/img/team/tanvir.png'%}" alt="" />
+                            <h4>tanvir sadat</h4>
+                            <p class="text-muted"></p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            
+                            <img class="mx-auto rounded-circle" src="{% static 'new/assets/img/team/sujana.png'%}" alt="" />
+                            <h4>Kazi Sarat Islam </h4>
+                            <p class="text-muted"></p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                
+                </div>
+            </div>
+        </section>
+       
+        
+      
+       
+    </body>
+</html>
+{% endblock content %}
